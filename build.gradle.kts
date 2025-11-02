@@ -38,17 +38,19 @@ configure<BukkitPluginDescription> {
     apiVersion = "1." + pluginVersion.split(".")[1]
     author = "ringoame196_s_mcPlugin"
     website = "https://github.com/ringoame196-s-mcPlugin"
-    /*
-    コマンド追加用
+
     commands {
-        register("test") {
-            description = "This is a test command!"
-            aliases = listOf("t")
-            permission = "testplugin.test"
-            usage = "Just run the command!"
+        register("multiframe") {
+            description = "MultipleItemFrame2用のコマンド"
+            usage = "/multiframe <summon,delete>"
         }
     }
-    */
+    permissions {
+        register("MultipleItemFrame2.admin") {
+            description = "MultipleItemFrame2の管理者権限"
+            default = BukkitPluginDescription.Permission.Default.OP
+        }
+    }
 }
 
 tasks.withType<ShadowJar> {
